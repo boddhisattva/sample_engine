@@ -12,3 +12,8 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+end
