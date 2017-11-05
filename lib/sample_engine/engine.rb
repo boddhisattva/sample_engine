@@ -4,11 +4,11 @@ module SampleEngine
 
     config.generators do |g|
       g.test_framework :rspec
-      g.fixture_replacement :factory_girl
-      g.factory_girl dir: 'spec/factories'
+      g.fixture_replacement :factory_bot
+      g.factory_bot dir: 'spec/factories'
     end
 
-    initializer "sample_engine.factories", :after => "factory_girl.set_factory_paths" do
+    initializer "sample_engine.factories", :after => "factory_bot.set_factory_paths" do
       FactoryBot.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryBot)
     end
   end
